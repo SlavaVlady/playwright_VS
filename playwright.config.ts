@@ -7,6 +7,19 @@ export default defineConfig({
       username: 'guest',
       password: 'welcome2qauto',
     },
-    headless: false, 
+    headless: false, // Запуск браузера с интерфейсом
   },
+  projects: [
+    {
+      name: 'chromium',
+      use: {
+        browserName: 'chromium',
+        launchOptions: {
+          slowMo: 500,
+        },
+      },
+    },
+  ], // Closing the array here
 });
+
+
