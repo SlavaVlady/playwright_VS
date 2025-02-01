@@ -1,6 +1,9 @@
 import { Locator, Page } from "@playwright/test";
 
 export default class SignUpForm {
+  static loginWithCredentials(email: any, password: any) {
+      throw new Error('Method not implemented.');
+  }
   static registerButton(registerButton: any) {
       throw new Error('Method not implemented.');
   }

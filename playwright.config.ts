@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 
 
@@ -15,13 +15,19 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'chromium',
+      name: 'regression',
       use: {
         browserName: 'chromium',
         launchOptions: {
           slowMo: 500,
         },
       },
+      dependencies: ['setup'],
+    },
+    {
+      name: 'setup',
+      use: {...devices ['Desktop Chrome']},
+      testMatch: '*setup/*.ts'
     },
   ],
 });

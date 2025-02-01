@@ -1,9 +1,13 @@
 import { Locator, Page } from "@playwright/test";
 
 export default class HomePage {
+    static openSignInForm() {
+        throw new Error('Method not implemented.');
+    }
     readonly page: Page;
     readonly signInButton: Locator;
     readonly signUpButton: Locator;
+    
 
     constructor(page: Page) {
         this.page = page;
@@ -21,5 +25,9 @@ export default class HomePage {
     async openPage() {
         await this.page.goto('/');
     }
+    async logout() {
+        await this.page.click('button[aria-label="Logout"]');
+        await this.page.waitForURL('https://qauto.forstudy.space/');
+      }
 
 }
